@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EkinAI — tuproq ma'lumotlari asosida ekin tavsiya qiluvchi sun'iy intellekt tizimi</title>
+<meta id="metaDescription" name="description" content="EkinAI — tuproq sensori, Excel fayl yoki qo'lda kiritilgan ko'rsatkichlar asosida TabNet sun'iy intellekt modeli yordamida ekin tavsiya qiluvchi mobil ilova. SamDU Sun'iy Intellekt Laboratoriyasi loyihasi.">
+<meta name="keywords" content="EkinAI, ekin tavsiya, sun'iy intellekt, tuproq sensori, TabNet, SamDU, precision agriculture, soil analysis">
+<meta name="theme-color" content="#0F4A2C">
+
+<!-- Open Graph -->
+<meta id="ogTitle" property="og:title" content="EkinAI — tuproq ma'lumotlari asosida ekin tavsiya qiluvchi sun'iy intellekt tizimi">
+<meta id="ogDescription" property="og:description" content="Tuproq sensori, Excel fayl yoki qo'lda kiritilgan ko'rsatkichlar asosida ekin tavsiya qiluvchi mobil ilova va tuproq sensori integratsiya prototipi.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/brand/home-header-bg.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/brand/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/img/brand/favicon-16.png">
+<link rel="apple-touch-icon" href="assets/img/brand/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ============================= NAVBAR ============================= -->
+<header class="navbar" id="navbar">
+  <div class="container">
+    <a href="#top" class="brand">
+      <img src="assets/img/brand/app-icon.png" alt="EkinAI logo">
+      <span>EkinAI</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#top" data-i18n="nav.home">Bosh sahifa</a>
+      <a href="#loyiha" data-i18n="nav.project">Loyiha</a>
+      <a href="#qanday" data-i18n="nav.how">Qanday ishlaydi</a>
+      <a href="#ilova" data-i18n="nav.app">Ilova</a>
+      <a href="#sensor" data-i18n="nav.sensor">Sensor</a>
+      <a href="#ai" data-i18n="nav.ai">AI</a>
+      <a href="#ekinlar" data-i18n="nav.crops">Ekinlar</a>
+      <a href="#aloqa" data-i18n="nav.contact">Aloqa</a>
+    </nav>
+
+    <div class="nav-right">
+      <div class="lang-switch" id="langSwitch">
+        <button class="lang-btn" id="langToggleBtn" aria-haspopup="true" aria-label="Tilni tanlash">
+          <img id="currentLangFlag" src="assets/img/flags/uz.png" alt="">
+          <span id="currentLangLabel">UZ</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="lang-menu" role="menu">
+          <button type="button" data-lang="uz" role="menuitem"><img src="assets/img/flags/uz.png" alt="">O'zbekcha</button>
+          <button type="button" data-lang="en" role="menuitem"><img src="assets/img/flags/en.png" alt="">English</button>
+          <button type="button" data-lang="ru" role="menuitem"><img src="assets/img/flags/ru.png" alt="">Русский</button>
+        </div>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Menyu">
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ============================= HERO ============================= -->
+<section class="hero" id="top">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow"><span class="dot"></span><span data-i18n="hero.eyebrow">SamDU sun'iy intellekt laboratoriyasi</span></span>
+      <h1 data-i18n="hero.h1">Tuproq ma'lumotlari asosida ekin tavsiya qiluvchi sun'iy intellekt ilovasi</h1>
+      <p class="lede" data-i18n="hero.lede">EkinAI tuproq namunasidagi pH, elektr o'tkazuvchanlik, azot, fosfor, kaliy va boshqa ko'rsatkichlarni tahlil qilib, har bir ekin uchun moslik darajasini ko'rsatadigan mobil ilova.</p>
+
+      <div class="hero-actions">
+        <a href="#qanday" class="btn btn-primary">
+          <span data-i18n="hero.ctaPrimary">Qanday ishlashini ko'rish</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </a>
+        <a href="#ilova" class="btn btn-ghost">
+          <span data-i18n="hero.ctaGhost">Ilova imkoniyatlari</span>
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat"><b data-i18n="hero.stat1v">18</b><span data-i18n="hero.stat1l">tuproq ko'rsatkichi</span></div>
+        <div class="stat"><b data-i18n="hero.stat2v">7</b><span data-i18n="hero.stat2l">ekin turi</span></div>
+        <div class="stat"><b data-i18n="hero.stat3v">~93%</b><span data-i18n="hero.stat3l">test aniqligi</span></div>
+        <div class="stat"><b data-i18n="hero.stat4v">Offline</b><span data-i18n="hero.stat4l">internetsiz ishlaydi</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="ring-decor"></div>
+      <div class="ring-decor r2"></div>
+      <div class="phone">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="scrim"></div>
+          <!-- APP SCREENSHOT: HOME (real splash/home screen goes here) -->
+          <div class="phone-brand">
+            
+           
+            
+          </div>
+        </div>
+        <div class="phone-float-card live">
+          <span class="ico"><span class="live-dot"></span></span>
+          <span><span data-i18n="hero.floatLive">Jonli sensor</span><span class="sub" data-i18n="hero.floatLiveSub">EC · pH · N · P · K</span></span>
+        </div>
+        <div class="phone-float-card score">
+          <span class="ico">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="0.8" fill="currentColor"/></svg>
+          </span>
+          <span><span data-i18n="hero.floatScore">Moslik darajasi</span><span class="sub" data-i18n="hero.floatScoreSub">Har bir ekin uchun alohida</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= PROBLEM / SOLUTION ============================= -->
+<section class="section-pad bg-alt" id="loyiha">
+  <div class="container">
+    <div class="section-head center" data-reveal>
+      <span class="eyebrow"><span class="dot"></span><span data-i18n="problem.eyebrow">Muammo va yechim</span></span>
+      <h2 data-i18n="problem.title">Tuproqni bilmasdan ekin tanlash qimmatga tushishi mumkin</h2>
+    </div>
+
+    <div class="ps-grid">
+      <div class="ps-card problem" data-reveal>
+        <span class="ico">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6"/><path d="M10 3v6.5L4.8 18a1.8 1.8 0 0 0 1.6 2.7h11.2a1.8 1.8 0 0 0 1.6-2.7L14 9.5V3"/><path d="M7.5 15h9"/></svg>
+        </span>
+        <h3 data-i18n="problem.pTitle">Muammo</h3>
+        <p data-i18n="problem.pText">Tuproqning kimyoviy va fizik xususiyatlarini bilmasdan ekin tanlash hosildorlikning pasayishiga olib kelishi mumkin.</p>
+      </div>
+      <div class="ps-card solution" data-reveal>
+        <span class="ico">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5.5c0 4.6-3 7.9-7 9.5-4-1.6-7-4.9-7-9.5V6Z"/><path d="M9 12l2 2 4-4.2"/></svg>
+        </span>
+        <h3 data-i18n="problem.sTitle">Yechim</h3>
+        <p data-i18n="problem.sText">EkinAI tuproq ko'rsatkichlarini yig'ib, sun'iy intellekt modeli yordamida tahlil qiladi va moslik darajasini hisoblaydi.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= HOW IT WORKS ============================= -->
+<section class="section-pad bg-soft" id="qanday">
+  <div class="container">
+    <div class="section-head center" data-reveal>
+      <span class="eyebrow"><span class="dot"></span><span data-i18n="how.eyebrow">Jarayon</span></span>
+      <h2 data-i18n="how.title">Tizim qanday ishlaydi</h2>
+    </div>
+
+    <div class="steps">
+      <div class="step" data-reveal>
+        <div class="step-num">1</div>
+        <h3 data-i18n="how.s1t">Namuna va joylashuv</h3>
+        <p data-i18n="how.s1d">Tuproq namunasi olinadi, ilova GPS orqali namuna joylashuvini belgilaydi.</p>
+      </div>
+      <div class="step" data-reveal>
+        <div class="step-num">2</div>
+        <h3 data-i18n="how.s2t">Ma'lumot kiritish</h3>
+        <p data-i18n="how.s2d">Sensordan jonli o'qish, Excel fayldan yuklash yoki qo'lda kiritish.</p>
+      </div>
+      <div class="step" data-reveal>
+        <div class="step-num">3</div>
+        <h3 data-i18n="how.s3t">Ko'rsatkichlarni tekshirish</h3>
+        <p data-i18n="how.s3d">18 ta tuproq xususiyati ko'rib chiqiladi, kerak bo'lsa tahrirlanadi.</p>
+      </div>
+      <div class="step" data-reveal>
+        <div class="step-num">4</div>
+        <h3 data-i18n="how.s4t">AI tahlili</h3>
+        <p data-i18n="how.s4d">TabNet modeli ma'lumotlarni qurilma ichida tahlil qiladi.</p>
+      </div>
+      <div class="step" data-reveal>
+        <div class="step-num">5</div>
+        <h3 data-i18n="how.s5t">Tavsiya va natija</h3>
+        <p data-i18n="how.s5d">Har bir ekin uchun mustaqil moslik foizi va tahlil natijasi beriladi.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= APP FEATURES (BENTO) ============================= -->
+<section class="section-pad bg-alt" id="ilova">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow"><span class="dot"></span><span data-i18n="features.eyebrow">Mobil ilova</span></span>
+      <h2 data-i18n="features.title">EkinAI ilovasining imkoniyatlari</h2>
+    
+    </div>
+
+    <div class="bento">
+      <div class="bento-card big tint" data-reveal>
+        <span class="ico">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 6V3M15 6V3M9 21v-3M15 21v-3M6 9H3M6 15H3M21 9h-3M21 15h-3"/><circle cx="12" cy="12" r="2.3"/></svg>
+        </span>
+        <div class="fon">
+        
+                <!-- <div class="bento-mini-stat">
+          <div><b data-i18n="features.bigStat1v">7</b><span data-i18n="features.bigStat1l">ekin</span></div>
+          <div><b data-i18n="features.bigStat2v">18</b><span data-i18n="features.bigStat2l">ko'rsatkich</span></div>
+        </div> -->
+        </div>
+      </div>
+
+      <div class="bento-card" data-reveal>
+        <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v5M15 3v5"/><path d="M6 8h12v3a6 6 0 0 1-12 0V8Z"/><path d="M12 17v4"/></svg></span>
+        <h3 data-i18n="features.f1t">Jonli sensor o'qish</h3>
+        <p data-i18n="features.f1d">RS485/Modbus tuproq sensori USB-OTG orqali ulanadi.</p>
+      </div>
+
+      <div class="bento-card" data-reveal>
+        <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V4"/><path d="M7 9l5-5 5 5"/><path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg></span>
+        <h3 data-i18n="features.f2t">Excel fayldan yuklash</h3>
+        <p data-i18n="features.f2d">N, P, K, pH va EC ustunlari avtomatik aniqlanadi.</p>
+      </div>
+
+      <div class="bento-card" data-reveal>
+        <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L18.5 9.5a2.1 2.1 0 0 0-3-3L5 17v3Z"/><path d="M13.5 6.5l3 3"/></svg></span>
+        <h3 data-i18n="features.f3t">Qo'lda kiritish</h3>
+        <p data-i18n="features.f3d">5 ta asosiy ko'rsatkichni qo'lda kiritish imkoniyati.</p>
+      </div>
+
+      <div class="bento-card" data-reveal>
+        <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10"/><path d="M11 20V4"/><path d="M18 20v-7"/></svg></span>
+        <h3 data-i18n="features.f4t">Xususiyat ta'siri</h3>
+        <p data-i18n="features.f4d">Qaysi ko'rsatkich natijaga qanchalik ta'sir qilgani grafikda.</p>
+      </div>
+
+      <div class="bento-card" data-reveal>
+        <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.3 7-11.5A7 7 0 0 0 5 9.5C5 14.7 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.3"/></svg></span>
+        <h3 data-i18n="features.f5t">GPS va xarita</h3>
+        <p data-i18n="features.f5d">Namuna joylashuvi sun'iy yo'ldosh xaritasida ko'rsatiladi.</p>
+      </div>
+
+      <div class="bento-card" data-reveal>
+        <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></span>
+        <h3 data-i18n="features.f6t">Tarix va statistika</h3>
+        <p data-i18n="features.f6d">Saqlangan tahlillar dashboard ko'rinishida kuzatiladi.</p>
+      </div>
+
+      <div class="bento-card" data-reveal>
+        <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.4 3.8 5.3 3.8 8.5s-1.3 6.1-3.8 8.5c-2.5-2.4-3.8-5.3-3.8-8.5S9.5 5.9 12 3.5Z"/></svg></span>
+        <h3 data-i18n="features.f7t">3 til qo'llab-quvvatlanadi</h3>
+        <p data-i18n="features.f7d">O'zbek, ingliz va rus tillarida ishlaydi.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= APP SCREENSHOTS GALLERY ============================= -->
+<section class="section-pad bg-soft">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow"><span class="dot"></span><span data-i18n="screens.eyebrow">Interfeys</span></span>
+      <h2 data-i18n="screens.title">Ilova ekranlari</h2>
+      <p data-i18n="screens.desc">Mobil ilovaning ishlash jarayonlaridan skrinshotlar</p>
+    </div>
+
+    <div class="screens-rail" data-reveal>
+      <!-- APP SCREENSHOT: HOME -->
+      <div class="screen-slot">
+        <div class="placeholder-phone">
+          <!-- Realism uchun Dynamic Island -->
+          <div class="dynamic-island"></div>
+          <!-- Haqiqiy skrinshot -->
+          <img src="assets/img/screen/2.jpg" alt="Bosh sahifa skrinshoti" class="app-screenshot">
+        </div>
+        <div class="cap" data-i18n="screens.c1">Bosh sahifa</div>
+        <div class="cap-sub" data-i18n="screens.c1s">Jonli sensor kartasi + tezkor menyu</div>
+      </div>
+
+      <!-- APP SCREENSHOT: SENSOR -->
+      <div class="screen-slot">
+        <div class="placeholder-phone">
+          <div class="dynamic-island"></div>
+          <img src="assets/img/screen/3.jpg" alt="Sensor ekrani skrinshoti" class="app-screenshot">
+        </div>
+        <div class="cap" data-i18n="screens.c2">Jonli sensor</div>
+        <div class="cap-sub" data-i18n="screens.c2s">EC · pH · N · P · K grid ko'rinishi</div>
+      </div>
+
+      <!-- APP SCREENSHOT: REVIEW -->
+      <div class="screen-slot">
+        <div class="placeholder-phone">
+          <div class="dynamic-island"></div>
+          <img src="assets/img/screen/4.jpg" alt="Tekshirish ekrani skrinshoti" class="app-screenshot">
+        </div>
+        <div class="cap" data-i18n="screens.c3">Ko'rsatkichlarni tekshirish</div>
+        <div class="cap-sub" data-i18n="screens.c3s">18 ta xususiyat, avto / qo'lda</div>
+      </div>
+
+      <!-- APP SCREENSHOT: RESULT -->
+      <div class="screen-slot">
+        <div class="placeholder-phone">
+          <div class="dynamic-island"></div>
+          <img src="assets/img/screen/5.jpg" alt="Natija ekrani skrinshoti" class="app-screenshot">
+        </div>
+        <div class="cap" data-i18n="screens.c4">Tahlil natijasi</div>
+        <div class="cap-sub" data-i18n="screens.c4s">Moslik foizi va gauge</div>
+      </div>
+
+      <!-- APP SCREENSHOT: FEATURE IMPACT -->
+      <div class="screen-slot">
+        <div class="placeholder-phone">
+          <div class="dynamic-island"></div>
+          <img src="assets/img/screen/6.jpg" alt="Xususiyat ta'siri ekrani skrinshoti" class="app-screenshot">
+        </div>
+        <div class="cap" data-i18n="screens.c5">Xususiyat ta'siri</div>
+        <div class="cap-sub" data-i18n="screens.c5s">Explainability grafigi</div>
+      </div>
+
+
+      <!-- APP SCREENSHOT: HISTORY -->
+      <div class="screen-slot">
+        <div class="placeholder-phone">
+          <div class="dynamic-island"></div>
+          <img src="assets/img/screen/8.jpg" alt="Tarix ekrani skrinshoti" class="app-screenshot">
+        </div>
+        <div class="cap" data-i18n="screens.c6">Dashboard</div>
+        <div class="cap-sub" data-i18n="screens.c6s">Saqlangan tahlillar va statistika</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= SENSOR INTEGRATION ============================= -->
+<section class="section-pad bg-alt" id="sensor">
+  <div class="container sensor-grid">
+    <div data-reveal>
+      <span class="eyebrow"><span class="dot"></span><span data-i18n="sensor.eyebrow">Uskuna integratsiyasi</span></span>
+      <h2 data-i18n="sensor.title">Tuproq sensori va mobil ilova integratsiyasi</h2>
+      <p data-i18n="sensor.text">Ilova RS485/Modbus protokoli asosida ishlaydigan tuproq sensori bilan USB-OTG kabeli orqali bevosita bog'lanadi.</p>
+
+      <div class="spec-list">
+        <div class="spec-row"><span class="k" data-i18n="sensor.specProtoK">Protokol</span><span class="v" data-i18n="sensor.specProtoV">RS485 / Modbus RTU</span></div>
+        <div class="spec-row"><span class="k" data-i18n="sensor.specConnK">Ulanish</span><span class="v" data-i18n="sensor.specConnV">USB-OTG kabel, avtomatik aniqlash</span></div>
+        <div class="spec-row"><span class="k" data-i18n="sensor.specReadK">O'lchovlar</span><span class="v" data-i18n="sensor.specReadV">Namlik, harorat, EC, pH, N, P, K</span></div>
+        <div class="spec-row"><span class="k" data-i18n="sensor.specLiveK">Yangilanish</span><span class="v" data-i18n="sensor.specLiveV">Real vaqtda, barqarorlashtirish algoritmi bilan</span></div>
+      </div>
+
+      
+    </div>
+
+    <div class="flow-diagram" data-reveal>
+      <div class="flow-node">
+        <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v9"/><path d="M12 11l-3 3.5a4.2 4.2 0 1 0 6 0L12 11Z"/></svg></span>
+        <span><strong data-i18n="sensor.flow1">Tuproq namunasi</strong><span data-i18n="sensor.flow1s">Dalada olingan namuna</span></span>
+      </div>
+      <span class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v14"/><path d="M6 13l6 6 6-6"/></svg></span>
+
+      <div class="flow-node highlight">
+        <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v5M15 3v5"/><path d="M6 8h12v3a6 6 0 0 1-12 0V8Z"/><path d="M12 17v4"/></svg></span>
+        <span><strong data-i18n="sensor.flow2">Tuproq sensori</strong><span data-i18n="sensor.flow2s">RS485 / Modbus RTU</span></span>
+      </div>
+      <span class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v14"/><path d="M6 13l6 6 6-6"/></svg></span>
+
+      <div class="flow-node">
+        <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.4"/><path d="M11 19.2h2"/></svg></span>
+        <span><strong data-i18n="sensor.flow3">Mobil ilova</strong><span data-i18n="sensor.flow3s">USB-OTG orqali qabul qilish</span></span>
+      </div>
+      <span class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v14"/><path d="M6 13l6 6 6-6"/></svg></span>
+
+      <div class="flow-node">
+        <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 6V3M15 6V3M9 21v-3M15 21v-3M6 9H3M6 15H3M21 9h-3M21 15h-3"/><circle cx="12" cy="12" r="2.3"/></svg></span>
+        <span><strong data-i18n="sensor.flow4">AI tahlili</strong><span data-i18n="sensor.flow4s">TabNet, qurilma ichida</span></span>
+      </div>
+      <span class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v14"/><path d="M6 13l6 6 6-6"/></svg></span>
+
+      <div class="flow-node highlight">
+        <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="0.8" fill="currentColor"/></svg></span>
+        <span><strong data-i18n="sensor.flow5">Ekin tavsiyasi</strong><span data-i18n="sensor.flow5s">Moslik foizi bilan</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= AI SECTION ============================= -->
+<section class="section-pad bg-deep" id="ai">
+  <div class="container ai-grid">
+    <div data-reveal>
+      <span class="eyebrow" style="background:rgba(78,222,163,0.14); color:var(--moss);"><span class="dot"></span><span data-i18n="ai.eyebrow">Sun'iy intellekt</span></span>
+      <h2 data-i18n="ai.title">Model tuproq ma'lumotlarini qanday tahlil qiladi</h2>
+      <p data-i18n="ai.text">TabNet — e'tibor (attention) mexanizmiga asoslangan chuqur o'rganish arxitekturasi. Model haqiqiy tuproq namunalari asosida o'qitilgan va butunlay qurilma ichida ishlaydi.</p>
+
+         </div>
+
+    <div data-reveal>
+      <div class="model-sheet">
+        <div class="row"><span class="k" data-i18n="ai.rowArchK">Arxitektura</span><span class="v" data-i18n="ai.rowArchV">TabNet (attention asosidagi chuqur o'rganish)</span></div>
+        <div class="row"><span class="k" data-i18n="ai.rowCatK">Kategorik xususiyatlar</span><span class="v" data-i18n="ai.rowCatV">Ordinal Encoding</span></div>
+        <div class="row"><span class="k" data-i18n="ai.rowMissK">Yo'qolgan qiymatlar</span><span class="v" data-i18n="ai.rowMissV">Extra Trees Iterative Imputer</span></div>
+        <div class="row accent"><span class="k" data-i18n="ai.rowAccK">Test aniqligi</span><span class="v" data-i18n="ai.rowAccV">~93% — oldin ko'rilmagan namunalarda</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= CROPS ============================= -->
+<section class="section-pad bg-alt" id="ekinlar">
+  <div class="container">
+    <div class="section-head center" data-reveal>
+      <span class="eyebrow"><span class="dot"></span><span data-i18n="crops.eyebrow">7 ta ekin</span></span>
+      <h2 data-i18n="crops.title">Model tavsiya qiladigan ekinlar</h2>
+      <p data-i18n="crops.text">Har bir ekin uchun tuproqqa nisbatan afzalliklar qisqacha tavsiflangan.</p>
+    </div>
+
+    <div class="crop-grid" data-reveal>
+      <div class="crop-card">
+        <div class="crop-photo"><img src="assets/img/crops/wheat.jpg" alt="Bug'doy" loading="lazy"><span class="crop-icon-badge"><img src="assets/img/crop-icons/wheat.png" alt=""></span></div>
+        <div class="crop-body"><h3 data-i18n="crop.Wheat.name">Bug'doy</h3><p data-i18n="crop.Wheat.blurb">Keng diapazonli tuproq sharoitlariga moslashuvchan asosiy don ekini.</p></div>
+      </div>
+      <div class="crop-card">
+        <div class="crop-photo"><img src="assets/img/crops/corn.jpg" alt="Makkajo'xori" loading="lazy"><span class="crop-icon-badge"><img src="assets/img/crop-icons/corn.png" alt=""></span></div>
+        <div class="crop-body"><h3 data-i18n="crop.Corn.name">Makkajo'xori</h3><p data-i18n="crop.Corn.blurb">Yuqori azot va kaliy talab qiladigan, issiqsevar don ekini.</p></div>
+      </div>
+      <div class="crop-card">
+        <div class="crop-photo"><img src="assets/img/crops/carrot.jpg" alt="Sabzi" loading="lazy"><span class="crop-icon-badge"><img src="assets/img/crop-icons/carrot.png" alt=""></span></div>
+        <div class="crop-body"><h3 data-i18n="crop.Carrot.name">Sabzi</h3><p data-i18n="crop.Carrot.blurb">Yumshoq, yaxshi drenajlangan, kam tosh aralashgan tuproqda yaxshi rivojlanadi.</p></div>
+      </div>
+      <div class="crop-card">
+        <div class="crop-photo"><img src="assets/img/crops/bean.jpg" alt="Loviya" loading="lazy"><span class="crop-icon-badge"><img src="assets/img/crop-icons/bean.png" alt=""></span></div>
+        <div class="crop-body"><h3 data-i18n="crop.Bean.name">Loviya</h3><p data-i18n="crop.Bean.blurb">Azotni o'zlashtiruvchi dukkakli ekin, o'rtacha namlik va neytral pH ni yaxshi ko'radi.</p></div>
+      </div>
+      <div class="crop-card">
+        <div class="crop-photo"><img src="assets/img/crops/pepper.jpg" alt="Qalampir" loading="lazy"><span class="crop-icon-badge"><img src="assets/img/crop-icons/pepper.png" alt=""></span></div>
+        <div class="crop-body"><h3 data-i18n="crop.Pepper.name">Qalampir</h3><p data-i18n="crop.Pepper.blurb">Issiqlikni va yaxshi drenajni yaxshi ko'radigan sabzavot ekini.</p></div>
+      </div>
+      <div class="crop-card">
+        <div class="crop-photo"><img src="assets/img/crops/potato.jpg" alt="Kartoshka" loading="lazy"><span class="crop-icon-badge"><img src="assets/img/crop-icons/potato.png" alt=""></span></div>
+        <div class="crop-body"><h3 data-i18n="crop.Potato.name">Kartoshka</h3><p data-i18n="crop.Potato.blurb">Yumshoq, gumusga boy, kislotaliroq tuproqda yaxshi hosil beradi.</p></div>
+      </div>
+      <div class="crop-card">
+        <div class="crop-photo"><img src="assets/img/crops/cotton.jpg" alt="Paxta" loading="lazy"><span class="crop-icon-badge"><img src="assets/img/crop-icons/cotton.png" alt=""></span></div>
+        <div class="crop-body"><h3 data-i18n="crop.Cotton.name">Paxta</h3><p data-i18n="crop.Cotton.blurb">Chuqur ildiz tizimiga ega, o'rtacha sho'rlanishga chidamli issiqsevar ekin.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= LAB / SCIENTIFIC FOUNDATION ============================= -->
+<section class="section-pad bg-soft">
+  <div class="container lab-grid">
+    <div class="lab-photo" data-reveal>
+      <img src="assets/img/brand/samdu-logo.jpg" alt="Samarqand Davlat Universiteti" loading="lazy">
+    </div>
+    <div data-reveal>
+      <span class="eyebrow"><span class="dot"></span><span data-i18n="lab.eyebrow">Ilmiy asos</span></span>
+      <h2 data-i18n="lab.title">SamDU Sun'iy Intellekt Laboratoriyasi</h2>
+      <p data-i18n="lab.text">Loyiha Samarqand Davlat Universiteti Sun'iy Intellekt Laboratoriyasida amaliy tadqiqot va mobil dasturlash tajribasi kesishmasida ishlab chiqilmoqda.</p>
+
+      <div class="value-list">
+        <div class="value-item">
+          <span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+          <p><strong data-i18n="lab.v1t">Haqiqiy namunalar</strong><span data-i18n="lab.v1d">Model haqiqiy tuproq namunalari asosida o'qitilgan va sinovdan o'tkazilgan.</span></p>
+        </div>
+        <div class="value-item">
+          <span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+          <p><strong data-i18n="lab.v2t">To'liq offline</strong><span data-i18n="lab.v2d">Tahlil qurilma ichida bajariladi, tuproq ma'lumotlari serverga yuborilmaydi.</span></p>
+        </div>
+        <div class="value-item">
+          <span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+          <p><strong data-i18n="lab.v3t">Tekshirilishi mumkin</strong><span data-i18n="lab.v3d">Model va oldindan ishlov berish usullari ilmiy maqolada hujjatlashtirilgan.</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= TECH STACK ============================= -->
+<section class="section-pad bg-alt">
+  <!-- <div class="container"> -->
+    <!-- <div class="section-head center" data-reveal>
+      <span class="eyebrow"><span class="dot"></span><span data-i18n="tech.eyebrow">Texnologiyalar</span></span>
+      <h2 data-i18n="tech.title">Loyihada ishlatilgan texnologiyalar</h2>
+    </div>
+
+    <div class="tech-groups" data-reveal>
+      <div>
+        <div class="tech-group-label" data-i18n="tech.g1">Mobil ilova</div>
+        <div class="tech-pills">
+          <span class="tech-pill"><span class="dot"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.4"/></svg></span>React Native</span>
+          <span class="tech-pill"><span class="dot"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.4"/></svg></span>Expo (SDK 57)</span>
+          <span class="tech-pill"><span class="dot"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.4"/></svg></span>TypeScript</span>
+          <span class="tech-pill"><span class="dot"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.4"/></svg></span>React Navigation</span>
+          <span class="tech-pill"><span class="dot"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.4"/></svg></span>AsyncStorage</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="tech-group-label" data-i18n="tech.g2">Sun'iy intellekt</div>
+        <div class="tech-pills">
+          <span class="tech-pill"><span class="dot"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><circle cx="12" cy="12" r="2.3"/></svg></span>TabNet (JS port)</span>
+          <span class="tech-pill"><span class="dot"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><circle cx="12" cy="12" r="2.3"/></svg></span>Ordinal Encoding</span>
+          <span class="tech-pill"><span class="dot"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><circle cx="12" cy="12" r="2.3"/></svg></span>Extra Trees Iterative Imputer</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="tech-group-label" data-i18n="tech.g3">Sensor integratsiyasi</div>
+        <div class="tech-pills">
+          <span class="tech-pill"><span class="dot"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v5M15 3v5"/><path d="M6 8h12v3a6 6 0 0 1-12 0V8Z"/></svg></span>Kotlin (native modul)</span>
+          <span class="tech-pill"><span class="dot"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v5M15 3v5"/><path d="M6 8h12v3a6 6 0 0 1-12 0V8Z"/></svg></span>Android USB Host API</span>
+          <span class="tech-pill"><span class="dot"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v5M15 3v5"/><path d="M6 8h12v3a6 6 0 0 1-12 0V8Z"/></svg></span>Modbus RTU</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="tech-group-label" data-i18n="tech.g4">Ma'lumot va vizualizatsiya</div>
+        <div class="tech-pills">
+          <span class="tech-pill"><span class="dot"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="7" ry="2.5"/><path d="M5 5.5V18c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5V5.5"/></svg></span>react-native-svg</span>
+          <span class="tech-pill"><span class="dot"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="7" ry="2.5"/><path d="M5 5.5V18c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5V5.5"/></svg></span>xlsx</span>
+          <span class="tech-pill"><span class="dot"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="7" ry="2.5"/><path d="M5 5.5V18c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5V5.5"/></svg></span>Leaflet</span>
+          <span class="tech-pill"><span class="dot"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="7" ry="2.5"/><path d="M5 5.5V18c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5V5.5"/></svg></span>OpenTopoMap / Esri</span>
+        </div>
+      </div>
+    </div> -->
+  <!-- </div> -->
+</section>
+
+<!-- ============================= CTA BAND ============================= -->
+<section class="section-pad bg-alt" style="padding-top:0;">
+  <div class="container">
+    <div class="cta-band" data-reveal>
+      <div>
+        <h2 data-i18n="cta.title">Loyiha kodi yoki ilmiy maqola bilan qiziqasizmi?</h2>
+        <p data-i18n="cta.text">EkinAI — SamDU Sun'iy Intellekt Laboratoriyasida davom etayotgan tadqiqot loyihasi.</p>
+      </div>
+      <a href="https://t.me/axatov_a" class="btn btn-primary">
+        <span data-i18n="cta.btn">Bog'lanish</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============================= FOOTER ============================= -->
+<footer class="site-footer" id="aloqa">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand"><img src="assets/img/brand/app-icon.png" alt="EkinAI"><span>EkinAI</span></div>
+        <p data-i18n="footer.tagline">Tuproq xususiyatlarini intellektual tahlil qilish asosida ekin tavsiya qiluvchi sun'iy intellektga asoslangan mobil ilova va tuproq sensori integratsiya prototipi.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.colPageT">Sahifa</h4>
+        <ul>
+          <li><a href="#loyiha" data-i18n="nav.project">Loyiha</a></li>
+          <li><a href="#qanday" data-i18n="nav.how">Qanday ishlaydi</a></li>
+          <li><a href="#sensor" data-i18n="nav.sensor">Sensor</a></li>
+          <li><a href="#ekinlar" data-i18n="nav.crops">Ekinlar</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.colProjT">Loyiha</h4>
+        <ul>
+          <li><a href="#ilova" data-i18n="footer.colProj1">Xususiyat ta'siri</a></li>
+          <li><a href="#ai" data-i18n="footer.colProj2">Texnologiyalar</a></li>
+          <li><a href="#ekinlar" data-i18n="footer.colProj3">Ilmiy asos</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.colAuthT">Muallif</h4>
+        <ul>
+          <li data-i18n="footer.authorName" style="color:rgba(255,255,255,0.85); font-weight:700;">Axatov Abror Askar o'g'li</li>
+          <li data-i18n="footer.authorRole" style="color:rgba(255,255,255,0.55); font-size:0.86rem;">SamDU sun'iy intellekt laboratoriyasi</li>
+          <li>
+            <a href="https://t.me/axatov_a" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 3L3 10.5l6.5 2.3M21 3l-3.2 17-8.3-6.2M21 3l-11.5 9.6"/></svg>
+              t.me/axatov_a
+            </a>
+          </li>
+
+          <li>
+  <a href="tel:+998995905265" style="display:inline-flex; align-items:center; gap:8px;">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+    </svg>
+    +998(99) 590-52-65
+  </a>
+</li>
+
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom" style="align-items: center;">
+      <span data-i18n="footer.copyright" style="text-align: center;">© 2026 EkinAI · SamDU Sun'iy Intellekt Laboratoriyasi</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
